@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 const HelloWorld = () => {
     return (
@@ -15,4 +16,4 @@ const HelloWorld = () => {
     );
 };
 
-export default HelloWorld;
+ReactDOM.hydrate(<HelloWorld />, document.getElementById('root'));

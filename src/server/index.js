@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server';
 import HelloWorld from '../container/HelloWorld';
 
 const app = express();
+app.use(express.static('public')); // 设置静态文件目录
 app.get('/', (req, res) => {
     const str = renderToString(<HelloWorld />);
     res.send(`
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
             </head>
             <body>
                 <div id="root">${str}</div>
+                <script src='./index.js'></script>
             </body>
             </html>
         `);
